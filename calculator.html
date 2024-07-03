@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<head>
+        <style>
+                .mainDiv{
+                        
+                        background-color: rgb(143, 203, 203);
+                        border: 2px solid black;
+                        padding: 10px;
+                        margin: 10% 40% 5%;
+                        border-bottom: 4px solid black;
+                        border-radius: 10px;
+                }
+                .calcscreen{
+                        background-color: aqua;
+                        border: 1px solid black;
+                        padding: 5px;
+                        margin: 0px 0px 10px;
+                        border-bottom: 2px solid black;
+                        border-left: 2px solid black;
+                        border-right: 2px solid black;
+                        border-radius: 5px;
+                        border-bottom: 3px solid black;
+                        display: flex;
+                        flex-direction: row-reverse;
+                        
+                        
+                }
+                .calcbuts{
+                        display: grid;
+                        grid-template-columns: repeat(4,1fr);
+                        grid-row-gap: 5px;
+                        grid-column-gap: 2px;                     
+                }
+                .button{
+                        border: 1px solid black;
+                        border-radius: 4px;
+                        cursor: pointer;
+                }
+                .styled:hover {
+                 background-color: rgb(209, 133, 133);
+                }
+                
+        </style>
+</head>
+<body>
+        <div class="mainDiv">
+                <div class="calcscreen" style="font-size: 25px;">0               
+                </div>
+                <div class="calcbuts">
+                        <button class="button styled:hover" type="button">7</button>
+                        <button class="button" type="button">8</button>
+                        <button class="button" type="button">9</button>
+                        <button class="button" type="button">/</button>
+                        <button class="button" type="button">4</button>
+                        <button class="button" type="button">5</button>
+                        <button class="button" type="button">6</button>
+                        <button class="button" type="button">x</button>
+                        <button class="button" type="button">1</button>
+                        <button class="button" type="button">2</button>
+                        <button class="button" type="button">3</button>
+                        <button class="button" type="button">-</button>
+                        <button class="button" type="button">0</button>
+                        <button class="button" type="button">.</button>
+                        <button class="button" type="button">+</button>
+                        <button class="button" type="button" style="background-color: chartreuse;">=</button>
+                        
+
+                </div>
+        </div>
+
+</body>
+</html>
