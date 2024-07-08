@@ -1,0 +1,139 @@
+<html lang="en">
+<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+</head>
+<body >
+
+        <div class="md1">
+                <div class="d1">
+                        <img src="https://th.bing.com/th/id/OIP.7VbdtbWlIk7v1GSmAXtUXQHaE7?w=274&h=182&c=7&r=0&o=5&dpr=1.7&pid=1.7" alt="navLogo" class="navLogo">
+                </div>
+                <div class="d2">
+                        <button style="border-radius: 5px; cursor: pointer;"><strong>LOGIN</strong></button>
+                        <button style="border-radius: 5px; cursor: pointer;"><strong>SIGN-UP</strong></button>
+                        <button style="border-radius: 5px; cursor: pointer;"><strong>HOME</strong></button>
+                
+                </div>
+        </div>
+        
+        
+</body>
+<style>
+        .navlogo{
+                width: 110px;
+                height: 40px;
+                margin: 0.5%;
+                border-radius: 10px;
+        }
+        .md1{
+                border: 1px solid black; 
+                border-radius: 5px;     
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                padding: 1%;
+                
+        }
+        /* .d1{
+                background-color: whitesmoke
+
+
+        } */
+        .d2{
+                display: flex;
+                flex-direction: row-reverse;
+        }
+        .md2{
+                margin: 3% 0%;
+                border: 1px solid black;
+                border-radius: 5px;
+                padding: 1%;
+                /* background-color: rgb(198, 155, 239); */
+        }
+        .d3{
+                border: 1px solid red ;
+                margin: 1%;
+                padding: 1%;
+                display: grid;
+                grid-template-columns: 60% 40%;
+
+        }
+        .d5{
+                border: 1px solid red ;
+                margin: 1%;
+                padding: 1%;
+                display: grid;
+                grid-template-columns: 40% 60%;
+
+        }
+        .image{
+                width: 100%;
+                height: 100%;
+                border-radius: 5px;
+        }
+        .p{
+                margin: 2%;
+        }
+        /* .d4{
+                display: grid;
+                grid-template-columns: 60% 40%;
+        } */
+        
+
+</style>
+</html>
+<script>
+        let inp1=document.createElement("input");
+        let inp2=document.createElement("input");
+        let btn=document.createElement("button");
+        let md2=document.createElement("div");
+        let body=document.querySelector("body");
+        md2.setAttribute("class","md2");
+        inp1.placeholder="data";
+        inp2.placeholder="img_url";
+        btn.innerHTML="submit";
+        md2.append(inp1,inp2,btn);
+        body.append(md2);
+        btn.addEventListener("click",fun);
+        let arr=[];
+        // const dynamicKey1="body";
+        // const dynamicKey2="image";
+        function fun() {
+                let obj={body:inp1.value,
+                        image:inp2.value
+                };
+                arr.push(obj);
+                console.log(arr);
+                display();
+        }
+        let div=document.createElement("div");
+        div.setAttribute("class","d4");
+        function display(){
+                div.innerHTML ="";
+                for(let i=0;i<arr.length;i++){
+                        let dv1=document.createElement("div");
+                        dv1.setAttribute("class","d3");                       
+                        let dv2=document.createElement("div");
+                        dv2.setAttribute("class","d5");                        
+                        let p=document.createElement("p");
+                        p.setAttribute("class","p")
+                        let img=document.createElement("img");
+                        img.setAttribute("class","image");
+                        p.innerText=arr[i].body;
+                        img.src=arr[i].image;
+                        if(i%2==0){
+                                // div.append(p,img);
+                                dv1.append(p,img);
+                                div.append(dv1);
+                        }else{
+                                // div.append(img,p);
+                                dv2.append(img,p);
+                                div.append(dv2);
+                        }
+                        md2.append(div);
+                        
+                }
+        }
+</script>
